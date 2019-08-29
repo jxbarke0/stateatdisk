@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <h4>Please complete the information below to register.</h4>
+  <form
+    [formGroup]="registrationForm"
+    *ngIf="!submitted"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label>Username</label>
+      <input
+        [class.is-invalid]="
+          registrationForm.get('userName').invalid &&
+          registrationForm.get('userName').touched
+        "
+        formControlName="userName"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        [class.is-invalid]="
+          registrationForm.get('email').invalid &&
+          registrationForm.get('email').touched
+        "
+        formControlName="email"
+        type="email"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        [class.is-invalid]="
+          registrationForm.get('password').invalid &&
+          registrationForm.get('password').touched
+        "
+        formControlName="password"
+        type="password"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input
+        [class.is-invalid]="
+          (registrationForm.get('confirmPassword').invalid &&
+            registrationForm.get('confirmPassword').touched) ||
+          registrationForm.errors?.misMatch
+        "
+        formControlName="confirmPassword"
+        type="password"
+        class="form-control"
+      />
+    </div>
+    <button
+      class="btn btn-block btn-info"
+      type="submit"
+      [disabled]="!registrationForm.valid"
+    >
+      REGISTER
+    </button>
+  </form>
+</div>
+<div
+  *ngIf="
+    (registrationForm.get('userName').touched &&
+      registrationForm.get('userName').invalid) ||
+    (registrationForm.get('email').touched &&
+      registrationForm.get('email').invalid) ||
+    (registrationForm.get('password').touched &&
+      registrationForm.get('password').invalid) ||
+    (registrationForm.get('confirmPassword').touched &&
+      registrationForm.get('confirmPassword').invalid) ||
+    registrationForm.errors?.misMatch ||
+    errorMsg
+  "
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 float-left">
+        <img
+          src="assets\AgitatedCloseKinglet-size_restricted.gif"
+          alt="you didnt say the magic word"
+        />
+        <audio src="assets\nedry.wav" autoplay="true" loop="true"></audio>
+      </div>
+
+      <div class="col-4 error-messages float-right">
+        <h4 class="text-danger">Ah ah ah!</h4>
+        <span
+          [class.d-none]="
+            registrationForm.get('userName').valid ||
+            registrationForm.get('userName').untouched
+          "
+          class="float-right text-danger"
+          >Username is required.</span
+        >
+        <span
+          [class.d-none]="
+            registrationForm.get('email').valid ||
+            registrationForm.get('email').untouched
+          "
+          class="float-right text-danger"
+          >Valid email address is required.</span
+        >
+        <span
+          [class.d-none]="
+            registrationForm.get('password').valid ||
+            registrationForm.get('password').untouched
+          "
+          class="float-right text-danger"
+          >Password is required.</span
+        >
+        <span
+          [class.d-none]="
+            registrationForm.get('confirmPassword').valid ||
+            registrationForm.get('confirmPassword').untouched
+          "
+          class="float-right text-danger"
+          >Please confirm password.</span
+        >
+        <span
+          *ngIf="registrationForm.errors?.misMatch"
+          class="float-right text-danger"
+          >Passwords do not match.</span
+        >
+        <span *ngIf="errorMsg" class="text-danger float-left">
+          {{ errorMsg }}
+        </span>
+      </div>
+    </div>
+    <button
+      *ngIf="errorMsg"
+      (click)="resetForm()"
+      class="btn btn-info btn-block"
+    >
+      Try Again
+    </button>
+  </div>
+</div>

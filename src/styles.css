@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+h1,
+h4 {
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+body {
+  font-family: "Lucida Console", sans-serif;
+}
+
+label {
+  text-transform: uppercase;
+}
+
+.container-fluid {
+  width: 70%;
+}
+
+.form-control {
+  background-color: black;
+  color: #44b844;
+}
+
+.form-control:focus {
+  background-color: black;
+  color: #44b844;
+}
+
+.text-danger {
+  font-weight: bolder;
+  text-align: left;
+}
+
+.btn-info {
+  background-color: #44b844;
+  margin-bottom: 1rem;
+}
+.btn-info:disabled {
+  background-color: lightgrey;
+  border-color: #323232;
+  cursor: not-allowed;
+}
+
+.container-fluid {
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 12px 5px 0 #323232;
+  background-color: #323232;
+  margin-bottom: 15px;
+  color: #44b844;
+}
