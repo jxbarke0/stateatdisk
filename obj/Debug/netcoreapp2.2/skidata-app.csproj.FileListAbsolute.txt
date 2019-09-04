@@ -1,0 +1,14 @@
+C:\Users\geoff\angular\skidata-app\bin\Debug\netcoreapp2.2\skidata-app.deps.json
+C:\Users\geoff\angular\skidata-app\bin\Debug\netcoreapp2.2\skidata-app.runtimeconfig.json
+C:\Users\geoff\angular\skidata-app\bin\Debug\netcoreapp2.2\skidata-app.runtimeconfig.dev.json
+C:\Users\geoff\angular\skidata-app\bin\Debug\netcoreapp2.2\skidata-app.dll
+C:\Users\geoff\angular\skidata-app\bin\Debug\netcoreapp2.2\skidata-app.pdb
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.csprojAssemblyReference.cache
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.csproj.CoreCompileInputs.cache
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.RazorAssemblyInfo.cache
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.RazorAssemblyInfo.cs
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.AssemblyInfoInputs.cache
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.AssemblyInfo.cs
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.RazorTargetAssemblyInfo.cache
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.dll
+C:\Users\geoff\angular\skidata-app\obj\Debug\netcoreapp2.2\skidata-app.pdb

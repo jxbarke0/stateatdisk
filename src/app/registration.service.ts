@@ -7,7 +7,7 @@ import { throwError } from "rxjs";
   providedIn: "root"
 })
 export class RegistrationService {
-  _url = "http://localhost:3000/enroll";
+  _url = "http://localhost:5000/api/registration/";
   constructor(private _http: HttpClient) {}
 
   register(userData) {

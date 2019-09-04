@@ -10,6 +10,8 @@ import { FormBuilder, Validators, AbstractControl } from "@angular/forms";
 export class RegistrationFormComponent implements OnInit {
   submitted = false;
   errorMsg = "";
+  successData = "";
+  user = "";
 
   constructor(
     private _registrationService: RegistrationService,
@@ -47,6 +49,7 @@ export class RegistrationFormComponent implements OnInit {
   onSubmit() {
     console.log(this.registrationForm);
     this.submitted = true;
+    this.user = this.registrationForm.value.userName;
     this._registrationService
       .register(this.registrationForm.value)
       .subscribe(
@@ -60,7 +63,5 @@ export class RegistrationFormComponent implements OnInit {
     this.errorMsg = "";
   }
 
-  ngOnInit() {
-    console.log(this.registrationForm);
-  }
+  ngOnInit() {}
 }
