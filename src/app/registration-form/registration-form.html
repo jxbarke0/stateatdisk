@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <h4 *ngIf="!submitted">Please complete the information below to register.</h4>
   <h4 *ngIf="submitted && !errorMsg">Welcome, {{ user }}!</h4>
+  <!-- Begin registration form -->
   <form
     [formGroup]="registrationForm"
     *ngIf="!submitted"
@@ -64,6 +65,7 @@
     </button>
   </form>
 </div>
+<!-- Validation errors section -->
 <div
   *ngIf="
     (registrationForm.get('userName').touched &&
@@ -127,6 +129,7 @@
           class="float-right text-danger"
           >Passwords do not match.</span
         >
+        <!-- Displays error messages from form POST -->
         <span *ngIf="errorMsg" class="text-danger float-left">
           {{ errorMsg }}
         </span>

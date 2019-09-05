@@ -10,6 +10,7 @@ export class RegistrationService {
   _url = "http://localhost:5000/api/registration/";
   constructor(private _http: HttpClient) {}
 
+  // Sends post request from registration form to .NET Core backend
   register(userData) {
     return this._http
       .post<any>(this._url, userData)

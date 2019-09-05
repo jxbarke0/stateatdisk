@@ -17,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
     private _registrationService: RegistrationService,
     private fb: FormBuilder
   ) {}
-  // Registration Form
+  // Registration Form from FormBuilder
   registrationForm = this.fb.group(
     {
       userName: ["", Validators.required],
@@ -31,6 +31,7 @@ export class RegistrationFormComponent implements OnInit {
   // Handles form validation errors
   validationErrors = false;
 
+  // Checks to see whether Password and Confirm Password fields match
   PasswordValidator(
     control: AbstractControl
   ): { [key: string]: boolean } | null {
@@ -46,18 +47,22 @@ export class RegistrationFormComponent implements OnInit {
       : null;
   }
 
+  // Handle submit button on form
   onSubmit() {
-    console.log(this.registrationForm);
+    //console.log(this.registrationForm);
     this.submitted = true;
     this.user = this.registrationForm.value.userName;
-    this._registrationService
-      .register(this.registrationForm.value)
-      .subscribe(
-        response => console.log("Success", response),
-        error => (this.errorMsg = error.statusText)
-      );
+    this._registrationService.register(this.registrationForm.value).subscribe(
+      response => {
+        if (response !== "success") {
+          this.errorMsg = response;
+        }
+      },
+      error => (this.errorMsg = error.statusText)
+    );
   }
 
+  // Resets form after it is submitted (Try Again button)
   resetForm() {
     this.submitted = false;
     this.errorMsg = "";
